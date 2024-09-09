@@ -1,0 +1,140 @@
+$primary-color: #333;
+$secondary-color: #555;
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+$font-family: Arial, sans-serif;
+$base-font-size: 16px;
+$container-max-width: 1200px;
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin box-shadow($offset-x, $offset-y, $blur, $color) {
+    box-shadow: $offset-x $offset-y $blur $color;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $base-font-size;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $background-color;
+}
+
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+.header {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+        font-size: 2.5rem;
+    }
+}
+
+.searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $border-color;
+    @include border-radius(8px);
+    margin-bottom: 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+        padding: 16px;
+        font-size: 1.125rem;
+    }
+}
+
+.launchList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .launchItem {
+        padding: 16px;
+        border: 1px solid $border-color;
+        @include border-radius(8px);
+        @include box-shadow(0, 2px, 4px, $shadow-color);
+        margin-bottom: 20px;
+        transition: box-shadow 0.3s;
+
+        &:hover {
+            @include box-shadow(0, 4px, 8px, rgba(0, 0, 0, 0.2));
+        }
+
+        .missionName {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: $primary-color;
+            margin-bottom: 8px;
+
+            @media (min-width: 768px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        .date,
+        .rocketName {
+            color: $secondary-color;
+        }
+    }
+}
+
+.loading,
+.error {
+    text-align: center;
+    color: $secondary-color;
+    margin-top: 20px;
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 1.125rem;
+    }
+}
+
+.back-to-home {
+    display: inline-block;
+    background-color: #0070f3;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    &:hover {
+        background-color: #005bb5;
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+    }
+}

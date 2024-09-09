@@ -1,0 +1,92 @@
+/* LaunchDetails.scss */
+$primary-color: #333;
+$secondary-color: #555;
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+$font-family: Arial, sans-serif;
+$base-font-size: 16px;
+$container-max-width: 1200px;
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin box-shadow($offset-x, $offset-y, $blur, $color) {
+  box-shadow: $offset-x $offset-y $blur $color;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $background-color;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #0070f3; /* Blue color for the button */
+  color: #fff; /* White text color */
+  padding: 12px 24px; /* Padding around the button text */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Font weight for emphasis */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+  text-decoration: none; /* Remove underline from the link */
+  margin-bottom: 20px; /* Margin below the button */
+
+  &:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+
+  &:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Focus state outline */
+  }
+}
+
+.mission-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.launch-details {
+  font-size: 1rem;
+  color: $secondary-color;
+  margin-bottom: 15px;
+  line-height: 1.5;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.loading, .error {
+  text-align: center;
+  color: $secondary-color;
+  margin-top: 20px;
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
