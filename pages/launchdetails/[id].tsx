@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import { GET_LAUNCH_DETAILS } from '../../queries/launchQueries';
 import './index.scss';
+import Link from 'next/link';
 
 const LaunchDetails = () => {
   const router = useRouter();
@@ -24,7 +25,9 @@ const LaunchDetails = () => {
     <div className='container'>
       <div className="header-wrapper">
         <h1 className='mission-name'>{mission_name}</h1>
-        <button className='back-button' onClick={() => router.back()}>Back to Launches</button>
+        <Link href="/launches" className='back-button'>
+          Back to Launches
+        </Link>
       </div>
 
       <p className='launch-details'>{details || 'No details available for this launch.'}</p>
