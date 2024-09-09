@@ -15,6 +15,9 @@ const LaunchDetails = () => {
   if (loading) return <p className="loading">Loading details...</p>;
   if (error) return <p className="error">Error: {error.message}</p>;
 
+  // Check if data and data.launch are defined
+  if (!data || !data.launch) return <p className="error">No launch details available.</p>;
+
   const { mission_name, launch_date_utc, rocket, details } = data.launch;
 
   return (
