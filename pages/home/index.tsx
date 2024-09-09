@@ -5,7 +5,7 @@ export const metadata = {
   title: "SpaceX Dashboard",
 };
 
-export default function home() {
+export default function Home() {
   return (
     <>
       <h1 className="main-heading">SpaceX Dashboard</h1>
