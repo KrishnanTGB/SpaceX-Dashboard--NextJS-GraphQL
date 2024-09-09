@@ -14,10 +14,10 @@
 /out/
 
 # Test files
-__tests__/
-*.test.js
-*.test.ts
-*.test.tsx
+# __tests__/
+# *.test.js
+# *.test.ts
+# *.test.tsx
 
 # production
 /build
