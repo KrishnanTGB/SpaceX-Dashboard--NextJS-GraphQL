@@ -1,4 +1,4 @@
-# SpaceX Dashobard
+# SpaceX Dashboard
 
 - A sample next.js app to retrieve the spacex launches and its details using it's spacex graphql api.
 
